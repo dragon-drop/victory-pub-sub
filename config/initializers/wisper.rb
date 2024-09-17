@@ -5,4 +5,5 @@ Rails.application.config.to_prepare do
   Wisper.subscribe(Notifications::Listeners::RpcListener.new)
   Wisper.subscribe(Ops::Listeners::ProjectListener.new)
   Wisper.subscribe(Ops::Listeners::QcOpportunityListener.new)
+  Wisper.subscribe(Sales::Listeners::ProjectListener.new)
 end
