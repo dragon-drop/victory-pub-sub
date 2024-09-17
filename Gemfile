@@ -60,3 +60,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "wisper", "~> 3.0"
