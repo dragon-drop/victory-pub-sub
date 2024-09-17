@@ -24,7 +24,7 @@ module Projects
     def success
       publish(:project_updated, project)
       publish(project_status_event_key, project) if project.saved_change_to_status?
-      publish(:project_year_home_built_changed) if project.saved_change_to_year_home_built?
+      publish(:project_year_home_built_changed, project) if project.saved_change_to_year_home_built?
     end
 
     def project_status_event_key
