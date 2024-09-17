@@ -1,5 +1,6 @@
 class Ops::Listeners::ProjectListener
   def project_updated(project)
-    puts "Update the project status for project #{project.id} if you need to"
+    Action.create(klass: 'Ops::Listeners::ProjectListener', action: 'project_updated')
+    Ops::Operations::Projects::UpdateStatus.call(project)
   end
 end

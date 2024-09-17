@@ -12,6 +12,7 @@ module Projects
     end
 
     def call
+      Action.create(klass: 'Projects::Update', action: 'call')
       updated = project.update(changes)
       if updated
         publish(:project_updated, project)
