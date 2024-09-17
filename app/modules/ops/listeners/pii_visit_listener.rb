@@ -5,6 +5,12 @@ module Ops
         Action.create(klass: 'Ops::Listeners::PiiVisitListener', action: 'project_cancelled')
         Ops::Operations::Projects::PiiVisits::CancelActive.call(project)
       end
+
+      def project_pending_project_visit(project)
+        Action.create(klass: 'Ops::Listeners::PiiVisitListener', action: 'project_pending_project_visit')
+        Ops::Operations::Projects::PiiVisits::CancelActiveBeforeProjectVisit.call(project)
+        Ops::Operations::Projects::PiiVisits::FinishPast.call(project)
+      end
     end
   end
 end
