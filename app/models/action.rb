@@ -1,8 +1,3 @@
 class Action < ApplicationRecord
-  after_create_commit lambda {
-                        broadcast_append_to(
-                          :actions,
-                          target: 'action_list'
-                        )
-                      }
+  after_create_commit { broadcast_append_to('actions') }
 end
