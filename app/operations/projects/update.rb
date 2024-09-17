@@ -16,6 +16,10 @@ module Projects
       updated = project.update(changes)
       if updated
         publish(:project_updated, project)
+        if project.saved_change_to_status?
+          publish("project_#{project.status.downcase.parameterize.underscore}".to_sym,
+                  project)
+        end
       else
         publish(:project_not_updated, project)
       end
