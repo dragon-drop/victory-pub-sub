@@ -1,8 +1,8 @@
 module Notifications
   module Rpc
     class ProjectCancelled
-      def self.call(_project)
-        Action.create(klass: 'Notifications::Rpc::ProjectCancelled', action: 'call')
+      def self.call(project)
+        Action.create(project:, klass: 'Notifications::Rpc::ProjectCancelled', action: 'call')
       end
     end
   end

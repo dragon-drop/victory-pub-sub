@@ -2,8 +2,8 @@ module Ops
   module Operations
     module Projects
       class UpdateStatus
-        def self.call(_project)
-          Action.create(klass: 'Ops::Operations::Projects::UpdateStatus', action: 'call')
+        def self.call(project)
+          Action.create(project:, klass: 'Ops::Operations::Projects::UpdateStatus', action: 'call')
         end
       end
     end

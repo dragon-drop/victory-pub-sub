@@ -3,8 +3,9 @@ module Ops
     module Projects
       module PiiVisits
         class CancelActive
-          def self.call(_project)
-            Action.create(klass: 'Ops::Operations::Projects::PiiVisits::CancelActive', action: 'call(project)')
+          def self.call(project)
+            Action.create(project:, klass: 'Ops::Operations::Projects::PiiVisits::CancelActive',
+                          action: 'call(project)')
           end
         end
       end

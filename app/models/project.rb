@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  has_many :actions, dependent: :destroy
+
   STATUSES = ['Draft',
               'Live Financing',
               'Pending Approval',

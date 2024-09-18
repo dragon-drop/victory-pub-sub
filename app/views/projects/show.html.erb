@@ -5,3 +5,8 @@
   <%= f.number_field :year_home_built %>
   <%= f.submit "Update project" %>
 <% end %>
+
+  <%= turbo_stream_from @project %>
+  <div id="actions">
+    <%= render @project.actions %>
+  </div>

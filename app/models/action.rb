@@ -1,3 +1,4 @@
 class Action < ApplicationRecord
-  after_create_commit { broadcast_append_to('actions') }
+  belongs_to :project
+  after_create_commit { broadcast_append_to(project) }
 end

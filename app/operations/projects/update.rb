@@ -12,7 +12,7 @@ module Projects
     end
 
     def call
-      Action.create(klass: 'Projects::Update', action: 'call')
+      Action.create(klass: 'Projects::Update', action: 'call', project:)
       updated = project.update(changes)
       success if updated
 
