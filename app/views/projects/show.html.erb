@@ -1,0 +1,7 @@
+<h1>Project <%= @project.id %></h1>
+
+<%= form_with model: @project do |f| %>
+  <%= f.select :status, Project::STATUSES %>
+  <%= f.number_field :year_home_built %>
+  <%= f.submit "Update project" %>
+<% end %>
