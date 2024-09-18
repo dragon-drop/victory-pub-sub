@@ -62,3 +62,5 @@ end
 
 
 gem "wisper", "~> 3.0"
+
+gem "tailwindcss-rails", "~> 2.7"
