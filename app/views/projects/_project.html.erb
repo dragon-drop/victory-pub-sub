@@ -1,6 +1,6 @@
-<div>
-  #<%= project.id %>
-  <%= project.status %>
-  <%= project.year_home_built %>
-  <%= link_to "View", project %>
+<div class="flex justify-between border rounded mt-4 p-4">
+  <span>#<%= project.id %></span>
+  <span><%= project.status %></span>
+  <span><%= project.year_home_built %></span>
+  <%= link_to "View", project, class: "text-blue-500 underline" %>
 </div>

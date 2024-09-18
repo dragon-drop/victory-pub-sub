@@ -1,12 +1,14 @@
-<h1>Project <%= @project.id %></h1>
+<div class="container">
+<h1 class="text-3xl font-bold">Project #<%= @project.id %></h1>
 
-<%= form_with model: @project do |f| %>
+<%= form_with model: @project, class: "my-5" do |f| %>
   <%= f.select :status, Project::STATUSES %>
   <%= f.number_field :year_home_built %>
-  <%= f.submit "Update project" %>
+  <%= f.submit "Update project", class: "bg-green-500 text-white p-3 rounded" %>
 <% end %>
 
   <%= turbo_stream_from @project %>
   <div id="actions">
     <%= render @project.actions %>
   </div>
+</div>
