@@ -16,8 +16,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_18_095545) do
     t.string "action"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "project_id", null: false
-    t.index ["project_id"], name: "index_actions_on_project_id"
+    t.integer "actionable_id", null: false
+    t.string "actionable_type", null: false
   end
 
   create_table "projects", force: :cascade do |t|
