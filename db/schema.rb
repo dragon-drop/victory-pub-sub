@@ -20,6 +20,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_23_223709) do
     t.string "actionable_type", null: false
   end
 
+  create_table "appointments", force: :cascade do |t|
+    t.string "status"
+    t.datetime "appointment_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "status"
