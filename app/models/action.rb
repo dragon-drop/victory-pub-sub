@@ -1,4 +1,4 @@
 class Action < ApplicationRecord
   belongs_to :actionable, polymorphic: true
-  after_create_commit { broadcast_prepend_to(project) }
+  after_create_commit { broadcast_prepend_to(actionable) }
 end
