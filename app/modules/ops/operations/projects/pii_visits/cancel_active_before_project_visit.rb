@@ -4,7 +4,7 @@ module Ops
       module PiiVisits
         class CancelActiveBeforeProjectVisit
           def self.call(project)
-            Action.create(project:, klass: 'Ops::Operations::Projects::PiiVisits::CancelActiveBeforeProjectVisit',
+            Action.create(actionable: project, klass: 'Ops::Operations::Projects::PiiVisits::CancelActiveBeforeProjectVisit',
                           action: 'call(project)')
           end
         end

@@ -4,7 +4,7 @@ module Ops
       module QcOpportunities
         class UpdateLast
           def self.call(project)
-            Action.create(project:, klass: 'Ops::Operations::Projects::QcOpportunities::UpdateLast',
+            Action.create(actionable: project, klass: 'Ops::Operations::Projects::QcOpportunities::UpdateLast',
                           action: 'call(project)')
           end
         end

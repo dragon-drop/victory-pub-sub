@@ -3,7 +3,8 @@ module Ops
     module Projects
       class UpdateDependentQcProject
         def self.call(project)
-          Action.create(project:, klass: 'Ops::Operations::Projects::UpdateDependentQcProject', action: 'call(project)')
+          Action.create(actionable: project, klass: 'Ops::Operations::Projects::UpdateDependentQcProject',
+                        action: 'call(project)')
         end
       end
     end
