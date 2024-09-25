@@ -9,3 +9,4 @@
 #   end
 #
 3.times {Project.create(status: "Draft")}
+User.create(name: "Adam")
