@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_25_104032) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_25_110608) do
   create_table "actions", force: :cascade do |t|
     t.string "klass"
     t.string "action"
@@ -34,6 +34,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_25_104032) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "year_home_built"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "appointments", "projects"
