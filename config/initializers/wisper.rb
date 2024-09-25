@@ -9,4 +9,5 @@ Rails.application.config.to_prepare do
   Wisper.subscribe(Ops::Listeners::QcOpportunityListener.new)
   Wisper.subscribe(Reporting::Listeners::ReportAppointmentListener.new)
   Wisper.subscribe(Sales::Listeners::ProjectListener.new)
+  Wisper.subscribe(Sales::Listeners::RoofingReportListener.new)
 end
