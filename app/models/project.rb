@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   has_many :actions, as: :actionable, dependent: :destroy
+  has_many :appointments, dependent: :destroy
 
   STATUSES = ['Draft',
               'Live Financing',
