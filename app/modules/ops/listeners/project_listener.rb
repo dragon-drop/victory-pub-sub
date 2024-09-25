@@ -1,4 +1,11 @@
 class Ops::Listeners::ProjectListener
+  def appoinment_status_changed(appointment)
+    Action.create(actionable: appointment, klass: 'Ops::Listeners::ProjectListener',
+                  action: 'appointment_status_changed')
+
+    # Ops::Operations::Projects::UpdateStatus.perform_later(project.parent_project)
+  end
+
   def project_updated(project)
     Action.create(actionable: project, klass: 'Ops::Listeners::ProjectListener', action: 'project_updated')
     Ops::Operations::Projects::UpdateStatus.call(project)
