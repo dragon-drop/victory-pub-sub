@@ -23,6 +23,7 @@ module Appointments
 
     def success
       publish(:appointment_updated, appointment)
+      publish(:appointment_status_changed, appointment) if appointment.saved_change_to_status?
       publish(appointment_status_event_key, appointment) if appointment.saved_change_to_status?
     end
 
