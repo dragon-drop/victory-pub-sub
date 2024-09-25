@@ -25,6 +25,7 @@ module Appointments
       publish(:appointment_updated, appointment)
       publish(:appointment_status_changed, appointment) if appointment.saved_change_to_status?
       publish(appointment_status_event_key, appointment) if appointment.saved_change_to_status?
+      publish(:appointment_user_changed, appointment) if appointment.saved_change_to_user_id?
     end
 
     def appointment_status_event_key
